@@ -15,11 +15,11 @@ public class ShapesTest {
 	public static void main(String[] args) {
 		
 		// Set Variables
-		float width = 5;
-		float height = 5;
-		float depth = 5;
-		float radius = 5;
-		float slant = 5;
+		float width = 3;
+		float height = 3;
+		float depth = 3;
+		float radius = 3;
+		float slant = 3;
 		
 		// Cuboid Test
 		Shape cuboid = new Cuboid(width, height, depth);
