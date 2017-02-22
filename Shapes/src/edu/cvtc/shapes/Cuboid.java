@@ -3,13 +3,11 @@
  */
 package edu.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
 /**
  * @author Tyler
  * Represents a Cuboid
  */
-public class Cuboid extends Shape {
+public class Cuboid extends Shape implements Renderer {
 
 	// Variables
 	private float width = 0;
@@ -43,7 +41,9 @@ public class Cuboid extends Shape {
 	}
 	
 	// Constructor
-	public Cuboid(float width, float height, float depth) {
+	public Cuboid(Dialog messageBox, float width, float height, float depth) {
+		
+		super(messageBox);
 		
 		if (width < 0 || height < 0 || depth < 0) {
 			
@@ -53,8 +53,7 @@ public class Cuboid extends Shape {
 			setDepth(5);
 			
 			// Show Error Message
-			JOptionPane.showMessageDialog(null, "Some invalid numbers were entered... Setting values to defaults (5).",
-					"Error", JOptionPane.PLAIN_MESSAGE);
+			getDialog().show("Some invalid numbers were entered... Setting values to defaults (5).", "Error");
 			
 		} else {
 			
@@ -93,8 +92,8 @@ public class Cuboid extends Shape {
 	public void render() {
 		
 		// Will Show Dimensions, Area, and Volume of the Cuboid in a Message Box
-		JOptionPane.showMessageDialog(null, "Dimensions: \nDepth = " + depth + "\nWidth = " + width + "\nHeight = " + height + 
-				"\n\nSurface Area: " + surfaceArea() + "\nVolume: " + volume(), "Cuboid", JOptionPane.PLAIN_MESSAGE);
+		getDialog().show("Dimensions: \nDepth = " + depth + "\nWidth = " + width + "\nHeight = " + height + 
+				"\n\nSurface Area: " + surfaceArea() + "\nVolume: " + volume(), "Cuboid");
 		
 	}
 

@@ -3,18 +3,15 @@
  */
 package edu.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
 /**
  * @author Tyler
  * Represents a Cylinder
  */
-public class Cylinder extends Shape {
+public class Cylinder extends Shape implements Renderer {
 	
 	// Variables
 	private float radius = 0;
 	private float height = 0;
-	private double pi = 3.14;
 
 	// Getters
 	public float getRadius() {
@@ -35,7 +32,9 @@ public class Cylinder extends Shape {
 	}
 	
 	// Constructor
-	public Cylinder(float radius, float height) {
+	public Cylinder(Dialog messageBox, float radius, float height) {
+		
+		super(messageBox);
 		
 		if (radius < 0 || height < 0) {
 			
@@ -44,8 +43,7 @@ public class Cylinder extends Shape {
 			setHeight(5);
 			
 			// Show Error Message
-			JOptionPane.showMessageDialog(null, "Some invalid numbers were entered... Setting values to defaults (5).",
-					"Error", JOptionPane.PLAIN_MESSAGE);
+			getDialog().show("Some invalid numbers were entered... Setting values to defaults (5).", "Error");
 			
 		} else {
 			
@@ -65,7 +63,7 @@ public class Cylinder extends Shape {
 		double rSquared = radius * radius;
 		
 		// Area Formula
-		return (float) (2 * (pi * rSquared) + 2 * pi * radius * height);
+		return (float) (2 * (Math.PI * rSquared) + 2 * Math.PI * radius * height);
 	}
 
 	// Volume
@@ -76,7 +74,7 @@ public class Cylinder extends Shape {
 		double rSquared = radius * radius;
 		
 		// Volume Formula
-		return (float) (pi * rSquared * height);
+		return (float) (Math.PI * rSquared * height);
 	}
 
 	// Message Box
@@ -84,8 +82,8 @@ public class Cylinder extends Shape {
 	public void render() {
 		
 		// Will Show Dimensions, Area, and Volume of the Cylinder in a Message Box
-		JOptionPane.showMessageDialog(null, "Dimensions: \nRadius = " + radius + "\nHeight = " + height + 
-				"\n\nSurface Area: " + surfaceArea() + "\nVolume: " + volume(), "Cylinder", JOptionPane.PLAIN_MESSAGE);
+		getDialog().show("Dimensions: \nRadius = " + radius + "\nHeight = " + height + 
+				"\n\nSurface Area: " + surfaceArea() + "\nVolume: " + volume(), "Cylinder");
 		
 	}
 	

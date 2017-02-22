@@ -11,6 +11,25 @@ public abstract class Shape {
 
 	public abstract float surfaceArea();
 	public abstract float volume();
-	public abstract void render();
+	
+	private Dialog dialog;
+	
+	protected Dialog getDialog() {
+		
+		return dialog;
+		
+	}
+	
+	private void setDialog(Dialog dialog) {
+		
+		this.dialog = dialog;
+		
+	}
+	
+	public Shape(Dialog dialog) {
+		
+		setDialog(dialog);
+		
+	}
 
 }

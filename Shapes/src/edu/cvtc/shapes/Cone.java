@@ -3,19 +3,16 @@
  */
 package edu.cvtc.shapes;
 
-import javax.swing.JOptionPane;
-
 /**
  * @author Tyler
  * Represents a Cone
  */
-public class Cone extends Shape{
+public class Cone extends Shape implements Renderer {
 
 	// Variables
 	private float radius = 0;
 	private float height = 0;
 	private float slant = 0;
-	private double pi = 3.14;
 
 	// Getters
 	public float getRadius() {
@@ -44,7 +41,9 @@ public class Cone extends Shape{
 	}
 	
 	// Constructor
-	public Cone(float radius, float height, float slant) {
+	public Cone(Dialog messageBox, float radius, float height, float slant) {
+		
+		super(messageBox);
 		
 		if (radius < 0 || height < 0 || slant < 0) {
 			
@@ -54,8 +53,7 @@ public class Cone extends Shape{
 			setSlant(5);
 			
 			// Show Error Message
-			JOptionPane.showMessageDialog(null, "Some invalid numbers were entered... Setting values to defaults (5).",
-					"Error", JOptionPane.PLAIN_MESSAGE);
+			getDialog().show("Some invalid numbers were entered... Setting values to defaults (5).", "Error");
 			
 		} else {
 			
@@ -76,7 +74,7 @@ public class Cone extends Shape{
 		double rSquared = radius * radius;
 		
 		// Area Formula
-		return (float) (pi * rSquared + pi * radius * slant);
+		return (float) (Math.PI * rSquared + Math.PI * radius * slant);
 	}
 
 	// Volume
@@ -87,7 +85,7 @@ public class Cone extends Shape{
 		double rSquared = radius * radius;
 		
 		// Base of Cone
-		double base = pi * rSquared;
+		double base = Math.PI * rSquared;
 		
 		// Volume Formula
 		return (float) (0.33 * base * height);
@@ -98,8 +96,8 @@ public class Cone extends Shape{
 	public void render() {
 		
 		// Will Show Dimensions, Area, and Volume of the Cone in a Message Box
-		JOptionPane.showMessageDialog(null, "Dimensions: \nRadius = " + radius + "\nHeight = " + height + "\nSlant Height = " + slant +  
-				"\n\nSurface Area: " + surfaceArea() + "\nVolume: " + volume(), "Cone", JOptionPane.PLAIN_MESSAGE);
+		getDialog().show("Dimensions: \nRadius = " + radius + "\nHeight = " + height + "\nSlant Height = " + slant +  
+				"\n\nSurface Area: " + surfaceArea() + "\nVolume: " + volume(), "Cone");
 		
 	}
 

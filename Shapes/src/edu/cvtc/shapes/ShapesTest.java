@@ -21,16 +21,18 @@ public class ShapesTest {
 		float radius = 3;
 		float slant = 3;
 		
+		Dialog dialog = new MessageBox();
+		
 		// Cuboid Test
-		Shape cuboid = new Cuboid(width, height, depth);
+		Cuboid cuboid = new Cuboid(dialog, width, height, depth);
 		cuboid.render();
 		
 		// Cylinder Test
-		Shape cylinder = new Cylinder(radius, height);
+		Cylinder cylinder = new Cylinder(dialog, radius, height);
 		cylinder.render();
 		
 		// Cone Test
-		Shape cone = new Cone(radius, height, slant);
+		Cone cone = new Cone(dialog, radius, height, slant);
 		cone.render();
 
 	}

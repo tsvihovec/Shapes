@@ -2,14 +2,13 @@ package edu.cvtc.shapes.tests;
 
 import static org.junit.Assert.*;
 
-import edu.cvtc.shapes.Cone;
-
+import edu.cvtc.shapes.Cylinder;
 import org.junit.Test;
 
 /**
  * Unit tests for the Cylinder class.
  */
-public class ConeTest {
+public class CylinderTest {
 	
 	/**
 	 * Height test.
@@ -18,11 +17,11 @@ public class ConeTest {
 	@Test
 	public void testHeight() throws IllegalArgumentException {
 		// 1. Arrange
-		Cone cone = new Cone(5, 5, 5);
+		Cylinder cylinder = new Cylinder(null, 5, 5);
 		int expected = 5;
 		
 		// 2. Act
-		int actual = (int) cone.getHeight();
+		int actual = (int) cylinder.getHeight();
 		
 		// 3. Assert
 		assertEquals("Height should be 5.", expected, actual);
@@ -35,31 +34,14 @@ public class ConeTest {
 	@Test
 	public void testRadius() throws IllegalArgumentException {
 		// 1. Arrange
-		Cone cone = new Cone(5, 5, 5);
+		Cylinder cylinder = new Cylinder(null, 5, 5);
 		int expected = 5;
 		
 		// 2. Act
-		int actual = (int) cone.getRadius();
+		int actual = (int) cylinder.getRadius();
 		
 		// 3. Assert
 		assertEquals("Radius should be 5.", expected, actual);
-	}
-	
-	/**
-	 * Slant test.
-	 * @throws IllegalArgumentException
-	 */
-	@Test
-	public void testSlant() throws IllegalArgumentException {
-		// 1. Arrange
-		Cone cone = new Cone(5, 5, 5);
-		int expected = 5;
-		
-		// 2. Act
-		int actual = (int) cone.getSlant();
-		
-		// 3. Assert
-		assertEquals("Slant should be 5.", expected, actual);
 	}
 	
 	/**
@@ -69,14 +51,14 @@ public class ConeTest {
 	@Test
 	public void testSurfaceArea() throws IllegalArgumentException {
 		// 1. Arrange
-		Cone cone = new Cone(5, 5, 5);
-		int expected = 157;
+		Cylinder cylinder = new Cylinder(null, 5, 5);
+		int expected = 314;
 		
 		// 2. Act
-		int actual = (int) cone.surfaceArea();
+		int actual = (int) cylinder.surfaceArea();
 		
 		// 3. Assert
-		assertEquals("Surface area should be 157.", expected, actual);
+		assertEquals("Surface area should be 314.", expected, actual);
 	}
 	
 	/**
@@ -86,14 +68,14 @@ public class ConeTest {
 	@Test
 	public void testSurfaceArea2() throws IllegalArgumentException {
 		// 1. Arrange
-		Cone cone = new Cone(2, 2, 2);
-		int expected = (int) 25.12;
+		Cylinder cylinder = new Cylinder(null, 2, 2);
+		int expected = (int) 50.24;
 		
 		// 2. Act
-		int actual = (int) cone.surfaceArea();
+		int actual = (int) cylinder.surfaceArea();
 		
 		// 3. Assert
-		assertEquals("Surface area should be 25.12.", expected, actual);
+		assertEquals("Surface area should be 50.24.", expected, actual);
 	}
 	
 	/**
@@ -103,14 +85,14 @@ public class ConeTest {
 	@Test
 	public void testSurfaceArea3() throws IllegalArgumentException {
 		// 1. Arrange
-		Cone cone = new Cone(3, 3, 3);
-		int expected = (int) 56.52;
+		Cylinder cylinder = new Cylinder(null, 3, 3);
+		int expected = (int) 113.04;
 		
 		// 2. Act
-		int actual = (int) cone.surfaceArea();
+		int actual = (int) cylinder.surfaceArea();
 		
 		// 3. Assert
-		assertEquals("Surface area should be 56.52.", expected, actual);
+		assertEquals("Surface area should be 113.04.", expected, actual);
 	}
 	
 	/**
@@ -120,14 +102,14 @@ public class ConeTest {
 	@Test
 	public void testVolume() throws IllegalArgumentException {
 		// 1. Arrange
-		Cone cone = new Cone(5, 5, 5);
-		int expected = (int) 129.525;
+		Cylinder cylinder = new Cylinder(null, 5, 5);
+		int expected = (int) 392.5;
 		
 		// 2. Act
-		int actual = (int) cone.volume();
+		int actual = (int) cylinder.volume();
 		
 		// 3. Assert
-		assertEquals("Volume should be 129.525.", expected, actual);
+		assertEquals("Volume should be 392.5.", expected, actual);
 	}
 	
 	/**
@@ -137,14 +119,14 @@ public class ConeTest {
 	@Test
 	public void testVolume2() throws IllegalArgumentException {
 		// 1. Arrange
-		Cone cone = new Cone(2, 2, 2);
-		int expected = (int) 8.2896;
+		Cylinder cylinder = new Cylinder(null, 2, 2);
+		int expected = (int) 25.12;
 		
 		// 2. Act
-		int actual = (int) cone.volume();
+		int actual = (int) cylinder.volume();
 		
 		// 3. Assert
-		assertEquals("Volume should be 8.2896.", expected, actual);
+		assertEquals("Volume should be 25.12.", expected, actual);
 	}
 	
 	/**
@@ -154,14 +136,14 @@ public class ConeTest {
 	@Test
 	public void testVolume3() throws IllegalArgumentException {
 		// 1. Arrange
-		Cone cone = new Cone(3, 3, 3);
-		int expected = (int) 27.9774;
+		Cylinder cylinder = new Cylinder(null, 3, 3);
+		int expected = (int) 84.78;
 		
 		// 2. Act
-		int actual = (int) cone.volume();
+		int actual = (int) cylinder.volume();
 		
 		// 3. Assert
-		assertEquals("Volume should be 27.9774.", expected, actual);
+		assertEquals("Volume should be 84.78.", expected, actual);
 	}
 	
 	/**
@@ -170,8 +152,8 @@ public class ConeTest {
 	 */
 	@Test
 	public void negativeValuesTest() throws IllegalArgumentException {
-		Cone cone = new Cone(-3, -2, -1);
+		Cylinder cylinder = new Cylinder(null, -2, -1);
 		
-		cone.surfaceArea();
+		cylinder.surfaceArea();
 	}
 }

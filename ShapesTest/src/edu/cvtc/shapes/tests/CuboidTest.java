@@ -17,7 +17,7 @@ public class CuboidTest {
 	@Test
 	public void testHeight() throws IllegalArgumentException {
 		// 1. Arrange
-		Cuboid cuboid = new Cuboid(5, 5, 5);
+		Cuboid cuboid = new Cuboid(null, 5, 5, 5);
 		int expected = 5;
 		
 		// 2. Act
@@ -34,7 +34,7 @@ public class CuboidTest {
 	@Test
 	public void testWidth() throws IllegalArgumentException {
 		// 1. Arrange
-		Cuboid cuboid = new Cuboid(5, 5, 5);
+		Cuboid cuboid = new Cuboid(null, 5, 5, 5);
 		int expected = 5;
 		
 		// 2. Act
@@ -51,7 +51,7 @@ public class CuboidTest {
 	@Test
 	public void testDepth() throws IllegalArgumentException {
 		// 1. Arrange
-		Cuboid cuboid = new Cuboid(5, 5, 5);
+		Cuboid cuboid = new Cuboid(null, 5, 5, 5);
 		int expected = 5;
 		
 		// 2. Act
@@ -68,7 +68,7 @@ public class CuboidTest {
 	@Test
 	public void testSurfaceArea() throws IllegalArgumentException {
 		// 1. Arrange
-		Cuboid cuboid = new Cuboid(5, 5, 5);
+		Cuboid cuboid = new Cuboid(null, 5, 5, 5);
 		int expected = 150;
 		
 		// 2. Act
@@ -85,7 +85,7 @@ public class CuboidTest {
 	@Test
 	public void testSurfaceArea2() throws IllegalArgumentException {
 		// 1. Arrange
-		Cuboid cuboid = new Cuboid(2, 2, 2);
+		Cuboid cuboid = new Cuboid(null, 2, 2, 2);
 		int expected = 24;
 		
 		// 2. Act
@@ -102,7 +102,7 @@ public class CuboidTest {
 	@Test
 	public void testSurfaceArea3() throws IllegalArgumentException {
 		// 1. Arrange
-		Cuboid cuboid = new Cuboid(3, 3, 3);
+		Cuboid cuboid = new Cuboid(null, 3, 3, 3);
 		int expected = 54;
 		
 		// 2. Act
@@ -119,7 +119,7 @@ public class CuboidTest {
 	@Test
 	public void testVolume() throws IllegalArgumentException {
 		// 1. Arrange
-		Cuboid cuboid = new Cuboid(5, 5, 5);
+		Cuboid cuboid = new Cuboid(null, 5, 5, 5);
 		int expected = 125;
 		
 		// 2. Act
@@ -136,7 +136,7 @@ public class CuboidTest {
 	@Test
 	public void testVolume2() throws IllegalArgumentException {
 		// 1. Arrange
-		Cuboid cuboid = new Cuboid(2, 2, 2);
+		Cuboid cuboid = new Cuboid(null, 2, 2, 2);
 		int expected = 8;
 		
 		// 2. Act
@@ -153,7 +153,7 @@ public class CuboidTest {
 	@Test
 	public void testVolume3() throws IllegalArgumentException {
 		// 1. Arrange
-		Cuboid cuboid = new Cuboid(3, 3, 3);
+		Cuboid cuboid = new Cuboid(null, 3, 3, 3);
 		int expected = 27;
 		
 		// 2. Act
@@ -169,7 +169,7 @@ public class CuboidTest {
 	 */
 	@Test
 	public void negativeValuesTest() throws IllegalArgumentException {
-		Cuboid cuboid = new Cuboid(-3, -2, -1);
+		Cuboid cuboid = new Cuboid(null, -3, -2, -1);
 		
 		cuboid.surfaceArea();
 	}
