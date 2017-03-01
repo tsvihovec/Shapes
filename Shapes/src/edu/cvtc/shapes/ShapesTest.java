@@ -14,25 +14,19 @@ public class ShapesTest {
 	 */
 	public static void main(String[] args) {
 		
-		// Set Variables
-		float width = 3;
-		float height = 3;
-		float depth = 3;
-		float radius = 3;
-		float slant = 3;
-		
 		Dialog dialog = new MessageBox();
+		ShapeFactory shapeFactory = new ShapeFactory(dialog);
 		
 		// Cuboid Test
-		Cuboid cuboid = new Cuboid(dialog, width, height, depth);
+		Cuboid cuboid = shapeFactory.makeCuboid(dialog);
 		cuboid.render();
 		
 		// Cylinder Test
-		Cylinder cylinder = new Cylinder(dialog, radius, height);
+		Cylinder cylinder = shapeFactory.makeCylinder(dialog);
 		cylinder.render();
 		
 		// Cone Test
-		Cone cone = new Cone(dialog, radius, height, slant);
+		Cone cone = shapeFactory.makeCone(dialog);
 		cone.render();
 
 	}
